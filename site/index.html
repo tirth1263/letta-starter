@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Letta Starter is a minimal stateful AI agent starter with persistent memory blocks and Nebius Token Factory inference."
+    />
+    <title>Letta Starter</title>
+    <link rel="preload" as="image" href="assets/hero-agent-memory.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="Primary">
+      <a class="brand" href="#top" aria-label="Letta Starter home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Letta Starter</span>
+      </a>
+      <nav class="nav-links" aria-label="Sections">
+        <a href="#memory">Memory</a>
+        <a href="#setup">Setup</a>
+        <a href="#repo">GitHub</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <p class="eyebrow">Stateful agents with durable memory</p>
+          <h1 id="hero-title">Letta Starter</h1>
+          <p class="hero-copy">
+            A compact Python starter for Letta agents that remember across sessions,
+            manage their own memory blocks, and run inference through Nebius Token Factory.
+          </p>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button primary" href="https://github.com/tirth1263/letta-starter">
+              <i data-lucide="github" aria-hidden="true"></i>
+              <span>View repo</span>
+            </a>
+            <a class="button secondary" href="#setup">
+              <i data-lucide="terminal" aria-hidden="true"></i>
+              <span>Start building</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="signal-strip" aria-label="Project highlights">
+        <div>
+          <strong>Persistent</strong>
+          <span>Memory survives CLI restarts</span>
+        </div>
+        <div>
+          <strong>Minimal</strong>
+          <span>One Python file plus Docker setup</span>
+        </div>
+        <div>
+          <strong>Portable</strong>
+          <span>OpenAI-compatible Nebius endpoint</span>
+        </div>
+      </section>
+
+      <section class="section" id="memory">
+        <div class="section-heading">
+          <p class="eyebrow">Agent memory</p>
+          <h2>Built around Letta core memory blocks.</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <i data-lucide="user-round" aria-hidden="true"></i>
+            <h3>Human block</h3>
+            <p>Stores useful facts about the user, such as identity, preferences, goals, and projects.</p>
+          </article>
+          <article class="feature-card">
+            <i data-lucide="badge" aria-hidden="true"></i>
+            <h3>Persona block</h3>
+            <p>Defines the agent personality so the assistant remains consistent across conversations.</p>
+          </article>
+          <article class="feature-card">
+            <i data-lucide="refresh-cw" aria-hidden="true"></i>
+            <h3>Self editing</h3>
+            <p>Lets the agent update memory as it learns, then reload the same state on the next run.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section setup-band" id="setup">
+        <div class="section-heading">
+          <p class="eyebrow">Quick setup</p>
+          <h2>Run the server, install the client, start the CLI.</h2>
+        </div>
+        <div class="command-layout">
+          <article class="command-block">
+            <div class="command-title">
+              <span>1. Letta server</span>
+              <button class="copy-button" data-copy="docker compose up -d" aria-label="Copy Docker command">
+                <i data-lucide="copy" aria-hidden="true"></i>
+              </button>
+            </div>
+            <pre><code>cp .env.example .env
+# edit NEBIUS_API_KEY
+docker compose up -d</code></pre>
+          </article>
+          <article class="command-block">
+            <div class="command-title">
+              <span>2. Python client</span>
+              <button class="copy-button" data-copy="pip install -r requirements.txt" aria-label="Copy install command">
+                <i data-lucide="copy" aria-hidden="true"></i>
+              </button>
+            </div>
+            <pre><code>pip install -r requirements.txt
+# or: uv sync</code></pre>
+          </article>
+          <article class="command-block">
+            <div class="command-title">
+              <span>3. Interactive CLI</span>
+              <button class="copy-button" data-copy="python main.py" aria-label="Copy run command">
+                <i data-lucide="copy" aria-hidden="true"></i>
+              </button>
+            </div>
+            <pre><code>python main.py</code></pre>
+          </article>
+        </div>
+      </section>
+
+      <section class="section demo-section">
+        <div class="memory-demo" aria-label="Example memory flow">
+          <div class="chat-lines">
+            <p><span>You</span> Hi, my name is Arindam and I love building AI apps.</p>
+            <p><span>Sam</span> Nice to meet you, Arindam. I will remember that.</p>
+            <p><span>Restart</span> python main.py</p>
+            <p><span>You</span> What's my name and what do I like to build?</p>
+          </div>
+          <div class="memory-panel">
+            <p class="panel-label">human memory</p>
+            <p>The human's name is Arindam. They love building AI apps.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section repo-section" id="repo">
+        <div class="repo-copy">
+          <p class="eyebrow">Open source</p>
+          <h2>Clone it, run it, and make it yours.</h2>
+          <p>
+            The repository includes the Python CLI, Docker configuration, environment
+            template, quickstart docs, and this deployment-ready website.
+          </p>
+        </div>
+        <a class="button primary repo-button" href="https://github.com/tirth1263/letta-starter">
+          <i data-lucide="external-link" aria-hidden="true"></i>
+          <span>Open on GitHub</span>
+        </a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Letta Starter</span>
+      <span>Built with Letta, Python, and Nebius Token Factory.</span>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

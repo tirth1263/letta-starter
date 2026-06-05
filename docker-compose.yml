@@ -1,0 +1,16 @@
+services:
+  letta:
+    image: letta/letta:latest
+    container_name: letta
+    ports:
+      - "8283:8283"
+    environment:
+      OPENAI_API_KEY: ${NEBIUS_API_KEY}
+      OPENAI_API_BASE: ${NEBIUS_BASE_URL:-https://api.tokenfactory.nebius.com/v1}
+      OPENAI_BASE_URL: ${NEBIUS_BASE_URL:-https://api.tokenfactory.nebius.com/v1}
+    volumes:
+      - letta_pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  letta_pgdata:
