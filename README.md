@@ -7,6 +7,8 @@
 
 A minimal starter for [Letta](https://docs.letta.com/) (formerly MemGPT), built for developers who want to create stateful agents that keep useful memory across sessions. Instead of sending every prompt to a stateless chat endpoint, this project runs a Letta agent with persistent `human` and `persona` memory blocks. The agent can update those blocks as it learns about the user, then remember them when the CLI restarts.
 
+**Live website:** [https://tirth1263.github.io/letta-starter/](https://tirth1263.github.io/letta-starter/)
+
 The default inference path is Nebius Token Factory through an OpenAI-compatible endpoint, using `Qwen/Qwen3-30B-A3B`.
 
 ## Why this project is useful
@@ -29,6 +31,7 @@ This makes it a clean foundation for:
 - Interactive Python CLI with readable output
 - Docker Compose setup for the Letta server
 - Static project website ready for deployment
+- GitHub Pages workflow for public website publishing
 
 ## Architecture
 
